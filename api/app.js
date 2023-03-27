@@ -6,6 +6,8 @@ const userModel = require('./user-model');
 const app = express();
 app.use(express.json());
 app.use(middleware.logger);
+app.use(cors());
+
 
 app.get('/api/kullanicilar',(req,res,next)=>{
     res.json(userModel.getAllUsers());
